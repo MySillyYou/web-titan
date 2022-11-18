@@ -14,7 +14,7 @@
             </div>
           </template>
           <div>
-            <span>{{ deviceInfo.allDevices }}</span>
+            <span>{{ deviceInfo.all_devices }}</span>
           </div>
         </el-card>
       </el-col>
@@ -69,20 +69,20 @@
     </el-row>
 
     <el-table :data="deviceInfo.list" border style="width: 100%">
-      <el-table-column prop="deviceName" label="Device" width="180">
-        <template #default="{ row }"> 
+      <el-table-column prop="device_name" label="Device" width="180">
+        <template #default="{ row }">
           <div class="flex">
-            <span class="tag" :status="state[row.deviceStatus]"></span>
-            {{ row.deviceName }}
+            <span class="tag" :status="state[row.device_status]"></span>
+            {{ row.device_name }}
           </div>
         </template>
       </el-table-column>
       <!-- <el-table-column prop="operator" label="运营商" width="180" /> -->
-      <el-table-column prop="ipLocation" label="Region" />
-      <el-table-column prop="networkType" label="Network Type" />
-      <el-table-column prop="todayOnlineTime" label="Online Time" />
-      <el-table-column prop="yesterdayIncome" label="Yesterday's Earnings" />
-      <el-table-column prop="cumuProfit" label="Cumulative Earnings" />
+      <el-table-column prop="ip_location" label="Region" />
+      <el-table-column prop="network_type" label="Network Type" />
+      <el-table-column prop="today_online_time" label="Online Time" />
+      <el-table-column prop="yesterday_income" label="Yesterday's Earnings" />
+      <el-table-column prop="cumu_profit" label="Cumulative Earnings" />
       <el-table-column label="Operation" align="center">
         <template #default="{ row }">
           <el-link type="primary" :underline="false" @click="goDetailPage(row)">
@@ -122,7 +122,7 @@ function goAddPage() {
 }
 
 function goDetailPage(row) {
-  router.push({ name: 'DeviceDetail', query: { deviceId: row.deviceId } })
+  router.push({ name: 'DeviceDetail', query: { deviceId: row.device_id } })
 }
 </script>
 
